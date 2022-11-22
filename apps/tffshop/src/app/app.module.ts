@@ -8,7 +8,6 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
-import { UiModule } from 'libs/ui/src/lib/ui.module';
 import {AccordionModule} from 'primeng/accordion';
 
 
@@ -24,7 +23,7 @@ const routes: Routes = [
 ];
 @NgModule({
     declarations: [AppComponent, HomePageComponent, ProductListComponent, HeaderComponent, FooterComponent],
-    imports: [BrowserModule, RouterModule.forRoot(routes), UiModule,AccordionModule,BrowserAnimationsModule],
+    imports: [BrowserModule, RouterModule.forRoot(routes), AccordionModule,BrowserAnimationsModule],
     providers: [],
     bootstrap: [AppComponent]
 })
