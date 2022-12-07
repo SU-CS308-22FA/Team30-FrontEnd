@@ -28,6 +28,10 @@ import {InputTextareaModule} from 'primeng/inputtextarea';
 import {InputSwitchModule} from 'primeng/inputswitch';
 import {DropdownModule} from 'primeng/dropdown';
 import {EditorModule} from 'primeng/editor';
+import { UsersListComponent } from './users/users-list/users-list.component';
+import { UsersFormComponent } from './users/users-form/users-form.component';
+import { TagModule } from 'primeng/tag';
+import { InputMaskModule } from 'primeng/inputmask';
 
 const routes: Routes = [
     {
@@ -62,14 +66,28 @@ const routes: Routes = [
             {
                 path: 'products/form/:id',
                 component: ProductsFormComponent
-            }
+            },
+            {
+                path: 'users',
+                component: UsersListComponent
+              },
+              {
+                path: 'users/form',
+                component: UsersFormComponent
+              },
+              {
+                path: 'users/form/:id',
+                component: UsersFormComponent
+              }
         ]
     }
 ];
 
 @NgModule({
-    declarations: [AppComponent, DashboardComponent, ShellComponent, SidebarComponent, CategoriesListComponent, CategoriesFormComponent, ProductsListComponent,ProductsFormComponent],
+    declarations: [UsersFormComponent,UsersListComponent,AppComponent, DashboardComponent,ShellComponent, SidebarComponent, CategoriesListComponent, CategoriesFormComponent, ProductsListComponent,ProductsFormComponent],
     imports: [
+        TagModule,
+        InputMaskModule,
         DropdownModule,
         EditorModule,
         InputSwitchModule,
