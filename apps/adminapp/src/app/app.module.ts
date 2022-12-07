@@ -14,14 +14,20 @@ import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
 import { HttpClientModule } from '@angular/common/http';
 import { CategoriesFormComponent } from './categories/categories-form/categories-form.component';
-import {InputTextModule} from 'primeng/inputtext';
+import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {ToastModule} from 'primeng/toast';
+import { ToastModule } from 'primeng/toast';
 import { CategoriesService } from '@group30/products';
 import { ConfirmationService, MessageService } from 'primeng/api';
-import {ConfirmDialogModule} from 'primeng/confirmdialog';
-import {ColorPickerModule} from 'primeng/colorpicker';
-
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ColorPickerModule } from 'primeng/colorpicker';
+import { ProductsListComponent } from './products/products-list/products-list.component';
+import { ProductsFormComponent } from './products/products-form/products-form.component';
+import {InputNumberModule} from 'primeng/inputnumber';
+import {InputTextareaModule} from 'primeng/inputtextarea';
+import {InputSwitchModule} from 'primeng/inputswitch';
+import {DropdownModule} from 'primeng/dropdown';
+import {EditorModule} from 'primeng/editor';
 
 const routes: Routes = [
     {
@@ -44,14 +50,47 @@ const routes: Routes = [
                 path: 'categories/form/:id',
                 component: CategoriesFormComponent
             }
+            ,
+            {
+                path: 'products',
+                component: ProductsListComponent
+            },
+            {
+                path: 'products/form',
+                component: ProductsFormComponent
+            },
+            {
+                path: 'products/form/:id',
+                component: ProductsFormComponent
+            }
         ]
     }
 ];
 
 @NgModule({
-    declarations: [AppComponent, DashboardComponent, ShellComponent, SidebarComponent, CategoriesListComponent, CategoriesFormComponent],
-    imports: [BrowserModule, RouterModule.forRoot(routes), BrowserAnimationsModule, CardModule, ToolbarModule, ButtonModule, TableModule, HttpClientModule,InputTextModule,FormsModule,ReactiveFormsModule, ToastModule,ConfirmDialogModule,ColorPickerModule],
-    providers: [CategoriesService,MessageService,ConfirmationService],
+    declarations: [AppComponent, DashboardComponent, ShellComponent, SidebarComponent, CategoriesListComponent, CategoriesFormComponent, ProductsListComponent,ProductsFormComponent],
+    imports: [
+        DropdownModule,
+        EditorModule,
+        InputSwitchModule,
+        InputTextareaModule,
+        InputNumberModule,
+        BrowserModule,
+        RouterModule.forRoot(routes),
+        BrowserAnimationsModule,
+        CardModule,
+        ToolbarModule,
+        ButtonModule,
+        TableModule,
+        HttpClientModule,
+        InputTextModule,
+        FormsModule,
+        ReactiveFormsModule,
+        ToastModule,
+        ConfirmDialogModule,
+        ColorPickerModule
+    ],
+    providers: [CategoriesService, MessageService, ConfirmationService],
     bootstrap: [AppComponent]
 })
 export class AppModule {}
