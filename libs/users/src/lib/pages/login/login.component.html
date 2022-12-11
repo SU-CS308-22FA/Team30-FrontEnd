@@ -1,0 +1,53 @@
+<div class="login-register">
+    <div class="login-register-panel">
+        <div class="grid">
+            <div class="col-6" id="border">
+                <img src="assets/images/tff01.png" alt="tff-logo">
+            </div>
+        
+            <div class="col-6">
+                <h2>Welcome</h2>
+                <h3>Admin Login Page</h3>
+                    <form [formGroup]="loginFormGroup">
+                        <div class="formgrid grid mt-4">
+                            <div class="col-12 mb-2">
+                                <div class="p-inputgroup">
+                                  <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+                                  <input type="text" formControlName="email" pInputText placeholder="Email" />
+                                </div>
+                                <small *ngIf="loginForm['email'].invalid && isSubmitted" class="p-error"
+                                  ><span *ngIf="loginForm['email'].errors['required']">Email is required</span>
+                                  <span *ngIf="loginForm['email'].errors['email']">Email is invalid</span></small
+                                >
+                              </div>
+                              <div class="col-12">
+                                <div class="p-inputgroup">
+                                  <span class="p-inputgroup-addon"><i class="pi pi-lock"></i></span>
+                                  <input
+                                    type="password"
+                                    formControlName="password"
+                                    pInputText
+                                    placeholder="Password"
+                                  />
+                                </div>
+                                <small *ngIf="loginForm['password'].invalid && isSubmitted" class="p-error"
+                                  >Password is required
+                                </small>
+                              </div>
+                              <div class="col-12 mt-4">
+                                <button pButton type="button" label="Login" (click)="onSubmit()" class="p-button-secondary p-button-rounded" 
+                                style="font-weight: bold; color: white; background-color: #000000; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); width: 100%; height: 100%;">
+                                </button>
+                              </div>
+                              <div class="col-12">
+                                <small *ngIf="isSubmitted && authError" class="p-error">
+                                    {{ authMessage }}
+                                </small>
+                              </div>
+                        </div>
+                </form>
+                </div>
+            </div>
+                </div>
+            </div>    
+  

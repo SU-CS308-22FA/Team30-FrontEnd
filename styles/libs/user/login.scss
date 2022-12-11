@@ -1,0 +1,31 @@
+.login-register{
+  background-image: linear-gradient(180deg, #ee1111, #ee5555);
+  height: 100vh;
+    &-panel{
+        width: 666px;
+        height: 556.03px;
+        background-color: var(--surface-a);
+        position: absolute;
+        left: calc(50% - 333px);
+        top: calc(50% - 278.015px);
+        right: calc(50% - 333px);
+        bottom: calc(50% - 278.015px);
+        img{
+            width:100%;
+        }
+        .grid{
+            margin-top: 0;
+            margin-right:0;
+            margin-bottom: 0;
+            margin-left: 0;
+        }
+        #border{
+            margin-right: 0%;
+            margin-top: 0%;
+            margin-bottom: 0%;
+            margin-left: 0%;
+            border-right: 2px solid #000;
+            
+        }
+    }
+}
