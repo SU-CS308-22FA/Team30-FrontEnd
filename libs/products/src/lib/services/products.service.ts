@@ -11,19 +11,19 @@ export class ProductsService {
   constructor(private http: HttpClient) {
    }
    getProducts(): Observable<Product[]>{
-       return this.http.get<Product[]>('http://localhost:3000/api/v1/products')
+       return this.http.get<Product[]>(this.apiURLProducts)
    }
    getProduct(productId:string): Observable<Product>{
-    return this.http.get<Product>(`http://localhost:3000/api/v1/products/${productId}`)
+    return this.http.get<Product>(`${this.apiURLProducts}/${productId}`)
 }
    createProduct(productData:FormData): Observable<Product>{
-    return this.http.post<Product>('http://localhost:3000/api/v1/products',productData)
+    return this.http.post<Product>(this.apiURLProducts,productData)
    }
    deleteProduct(productId: string): Observable<unknown>{
-    return this.http.delete<unknown>(`http://localhost:3000/api/v1/products/${productId}`)
+    return this.http.delete<unknown>(`${this.apiURLProducts}/${productId}`)
    }
    updateProduct(productData:FormData, productId:string): Observable<Product>{
-    return this.http.put<Product>(`http://localhost:3000/api/v1/products/${productId}`,productData)
+    return this.http.put<Product>(`${this.apiURLProducts}/${productId}`, productData)
    }
    getProductsCount(): Observable<number> {
     return this.http
