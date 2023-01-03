@@ -1,8 +1,8 @@
 <div class="admin-page" *ngIf="statistics.length">
     <p-card header="Dashboard" subheader="Latest Updates">
       <div class="grid">
-        <div class="col-4">
-            <a href="/products">
+        <div class="col-4" id="prod-router">
+          <a routerLink="/products">
           <p-card styleClass="d-products">
             <div class="d-item">
               <div>
@@ -15,7 +15,7 @@
         </a>
         </div>
         <div class="col-4">
-            <a href="/categories">
+          <a routerLink="/categories">
             <p-card styleClass="d-totalsales">
               <div class="d-item">
                 <div>
@@ -28,7 +28,7 @@
             </a>
           </div>
         <div class="col-4">
-            <a href="/orders">
+          <a routerLink="/orders">
           <p-card styleClass="d-orders">
             <div class="d-item">
               <div>
@@ -43,7 +43,7 @@
       </div>
       <div class="grid">
         <div class="col-4">
-            <a href="/users">
+          <a routerLink="/users">
           <p-card styleClass="d-users">
             <div class="d-item">
               <div>

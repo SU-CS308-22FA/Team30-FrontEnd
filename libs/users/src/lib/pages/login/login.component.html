@@ -13,7 +13,11 @@
                             <div class="col-12 mb-2">
                                 <div class="p-inputgroup">
                                   <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+<<<<<<< HEAD
                                   <input name="email" type="text" formControlName="email" pInputText placeholder="Email" />
+=======
+                                  <input type="text" id="name" formControlName="email" name="email" pInputText placeholder="Email" />
+>>>>>>> cf9c574ea0e7eba4b31ec85b3f452e01e664fb31
                                 </div>
                                 <small *ngIf="loginForm['email'].invalid && isSubmitted" class="p-error"
                                   ><span *ngIf="loginForm['email'].errors['required']">Email is required</span>
@@ -24,7 +28,12 @@
                                 <div class="p-inputgroup">
                                   <span class="p-inputgroup-addon"><i class="pi pi-lock"></i></span>
                                   <input
+<<<<<<< HEAD
                                   name="password"
+=======
+                                    id="password"
+                                    name="password"
+>>>>>>> cf9c574ea0e7eba4b31ec85b3f452e01e664fb31
                                     type="password"
                                     formControlName="password"
                                     pInputText
